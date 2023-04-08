@@ -4,5 +4,6 @@
         <div class="px-4">
             {{ todo.title | titlecase}}
         </div>
+        <button (click)="onDelete(todo)" class="btn btn-danger btnfloat">Delete</button>
     </li>
 </div>

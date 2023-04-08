@@ -12,7 +12,7 @@ export class TodosComponent implements OnInit {
   todos !: Todo[];
   page: number = 1;
   count: number = 0;
-  tableSize: number = 6;
+  tableSize: number = 5;
   // tableSizes: any = [3, 6, 9, 12];
 
   constructor(private todoService: TodoService ) { }
@@ -37,4 +37,20 @@ export class TodosComponent implements OnInit {
     this.page = 1;
     this.fetchTodos();
   }
+
+  addTodo(todo: Todo) {
+    this.todoService.addTodo(todo).subscribe((todo) => {
+      console.log(todo);
+      this.todos.push(todo);
+    });
+  }
+
+  //delete todos
+  deleteTodo (todo: Todo) {
+    //remove from UI
+    this.todos = this.todos.filter(t => t.id !== todo.id);
+    //remove from server
+    this.todoService.deleteTodo(todo).subscribe();
+  }
+
 }
