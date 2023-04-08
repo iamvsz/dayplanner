@@ -42,7 +42,7 @@ export class TodoService {
 
   //add todo to the server using the HttpClient and return an observable of type Todo mapped to the response and catch any errors
   addTodo(todo: Todo): Observable<Todo> {
-    return this.http.post<Todo>(this.todosUrl, todo)
+    return this.http.post<Todo>(this.todosUrl, todo, { responseType: 'json' })
       .pipe(
         map((response: Todo) => {
           console.log(response);
