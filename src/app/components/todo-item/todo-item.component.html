@@ -1,0 +1,6 @@
+<div [ngClass]="setClasses()">
+    <li class="list-group-item d-flex align-items-center border-0 mb-0 rounded" style="background-color: #f4f6f7;">
+        <input (change)="onToggle(todo)" type="checkbox" [checked]="todo.completed" />
+        {{ todo.title }}
+    </li>
+</div>

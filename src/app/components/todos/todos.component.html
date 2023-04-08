@@ -1,0 +1,7 @@
+<app-todo-item *ngFor="
+let todo of todos | paginate: { itemsPerPage: tableSize, currentPage: page, totalItems: count };
+let index = index" [todo]="todo"></app-todo-item>
+<div class="d-flex justify-content-center">
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+</div>
