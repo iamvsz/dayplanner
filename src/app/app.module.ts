@@ -7,12 +7,14 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TaskCompleteDirective } from './directives/task-complete.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoItemComponent,
-    TodosComponent
+    TodosComponent,
+    TaskCompleteDirective
   ],
   imports: [
     BrowserModule,
